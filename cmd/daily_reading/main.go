@@ -15,9 +15,10 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	message := linebot.NewTextMessage("hello, world!")
-	if _, err := bot.BroadcastMessage(message).Do(); err != nil {
-		log.Fatal(err)
-	}
+	/*
+		message := linebot.NewTextMessage("hello, world!")
+		if _, err := bot.BroadcastMessage(message).Do(); err != nil {
+			log.Fatal(err)
+		}
+	*/
 }

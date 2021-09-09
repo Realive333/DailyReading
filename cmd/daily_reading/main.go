@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	bot, err := linebot.New(
+	_, err := linebot.New(
 		os.Getenv("CHANNEL_SECRET"),
 		os.Getenv("CHANNEL_TOKEN"),
 	)

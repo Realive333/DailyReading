@@ -7,7 +7,7 @@ import (
 )
 
 func Test_ReadCsvFile(t *testing.T) {
-	actual, err := filereader.ReadCsvFile("document/scripture.csv")
+	actual, err := filereader.ReadCsvFile("../document/scripture.csv")
 	if err != nil {
 		t.Errorf("Test ReadCsvFile Error: %v", err.Error())
 	}

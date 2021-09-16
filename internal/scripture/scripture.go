@@ -8,7 +8,7 @@ import (
 )
 
 func GetScripture(date time.Time) (scripture string, err error) {
-	items, err := filereader.ReadCsvFile("document/scripture.csv")
+	items, err := filereader.ReadCsvFile("../document/scripture.csv")
 	if err != nil {
 		return
 	}

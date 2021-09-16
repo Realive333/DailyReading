@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 
@@ -28,4 +29,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	_, err = fmt.Scanln()
+	if err != nil {
+		log.Fatal(err)
+	}
 }

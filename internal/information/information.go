@@ -30,7 +30,7 @@ func (info Info) GetMessageStr() string {
 		contentStr string
 	)
 
-	if info.Date.Hour() < 8 {
+	if info.Date.Hour() < 4 {
 		timeStr = "早安"
 	} else {
 		timeStr = "晚安"

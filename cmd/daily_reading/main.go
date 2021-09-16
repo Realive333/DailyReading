@@ -18,7 +18,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	info, err := information.CreateInfoStruct()
+	info, err := information.CreateInfoStruct(os.Getenv("PATH"))
 	if err != nil {
 		log.Fatal(err)
 	}

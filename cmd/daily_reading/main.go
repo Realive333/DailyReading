@@ -18,7 +18,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	message := linebot.NewTextMessage(information.GetMessageStr())
+	info := information.CreateInfoScruct()
+
+	message := linebot.NewTextMessage(info.GetMessageStr())
 	if _, err := bot.BroadcastMessage(message).Do(); err != nil {
 		log.Fatal(err)
 	}

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 
@@ -19,6 +18,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	log.Println("Starting Line Bot, DailyReading v0.1a")
+
 	info, err := information.CreateInfoStruct(os.Getenv("FILEPATH"))
 	if err != nil {
 		log.Fatal(err)
@@ -26,11 +27,6 @@ func main() {
 
 	message := linebot.NewTextMessage(info.GetMessageStr())
 	if _, err := bot.BroadcastMessage(message).Do(); err != nil {
-		log.Fatal(err)
-	}
-
-	_, err = fmt.Scanln()
-	if err != nil {
 		log.Fatal(err)
 	}
 }

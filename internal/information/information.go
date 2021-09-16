@@ -13,9 +13,9 @@ type Info struct {
 	url       string
 }
 
-func CreateInfoStruct() (Info, error) {
+func CreateInfoStruct(path string) (Info, error) {
 	date := time.Now()
-	scripture, err := scripture.GetScripture(date)
+	scripture, err := scripture.GetScripture(date, path)
 	if err != nil {
 		return Info{}, err
 	}

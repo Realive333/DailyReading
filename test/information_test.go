@@ -7,7 +7,7 @@ import (
 )
 
 func Test_CreateInfoScruct(t *testing.T) {
-	assert, err := information.CreateInfoStruct()
+	assert, err := information.CreateInfoStruct("../document/scripture.csv")
 	if err != nil {
 		t.Errorf("Test CreateInfoScruct Error: %v", err)
 	}
@@ -16,7 +16,7 @@ func Test_CreateInfoScruct(t *testing.T) {
 }
 
 func Test_GetMessageStr(t *testing.T) {
-	testcase, err := information.CreateInfoStruct()
+	testcase, err := information.CreateInfoStruct("../document/scripture.csv")
 	if err != nil {
 		t.Errorf("Test GetMessageStr Error: %v", err)
 	}

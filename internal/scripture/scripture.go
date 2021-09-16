@@ -7,8 +7,8 @@ import (
 	"github.com/Realive333/DailyReading/pkg/filereader"
 )
 
-func GetScripture(date time.Time) (scripture string, err error) {
-	items, err := filereader.ReadCsvFile("../document/scripture.csv")
+func GetScripture(date time.Time, path string) (scripture string, err error) {
+	items, err := filereader.ReadCsvFile(path)
 	if err != nil {
 		return
 	}

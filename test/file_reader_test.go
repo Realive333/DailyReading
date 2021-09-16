@@ -12,8 +12,8 @@ func Test_ReadCsvFile(t *testing.T) {
 		t.Errorf("Test ReadCsvFile Error: %v", err.Error())
 	}
 
-	if len(actual) != 31 {
-		t.Errorf("Test ReadCsvFile: length should be %d; is %d", 31, len(actual))
+	if len(actual) != 366 {
+		t.Errorf("Test ReadCsvFile: length should be %d; is %d", 366, len(actual))
 	}
 
 	if actual[0][0] != "1" {

@@ -31,12 +31,18 @@ func (info Info) GetMessageStr() string {
 	)
 
 	if info.Date.Hour() < 12 {
-		timeStr = "早安，"
+		timeStr = "早安"
 	} else {
-		timeStr = "晚安，"
+		timeStr = "晚安"
 	}
 
-	contentStr = fmt.Sprintf("%s\n\n今天的經文是：%s章\n\n%s", timeStr, info.Scripture, info.url)
+	timeStr = fmt.Sprintf("%s，今天是%d月%d日\n", timeStr, info.Date.Month(), info.Date.Day())
+
+	if info.Scripture == "" {
+		contentStr = fmt.Sprintf("%s今天沒有經文\n\n%s", timeStr, info.Scripture, info.url)
+	} else {
+		contentStr = fmt.Sprintf("%s今天的經文是：%s章\n\n%s", timeStr, info.Scripture, info.url)
+	}
 
 	return contentStr
 }

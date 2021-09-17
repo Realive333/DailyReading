@@ -14,7 +14,7 @@ type Info struct {
 }
 
 func CreateInfoStruct(path string) (Info, error) {
-	date := time.Now()
+	date := time.Now().Local().Add(time.Hour * 8)
 	scripture, err := scripture.GetScripture(date, path)
 	if err != nil {
 		return Info{}, err
@@ -30,13 +30,13 @@ func (info Info) GetMessageStr() string {
 		contentStr string
 	)
 
-	if info.Date.Hour() < 4 {
+	if info.Date.Hour() < 12 {
 		timeStr = "早安"
 	} else {
 		timeStr = "晚安"
 	}
 
-	timeStr = fmt.Sprintf("%s，今天是%d月%d日\n", timeStr, info.Date.Month(), info.Date.Day())
+	timeStr = fmt.Sprintf("%s，現在是%d月%d日　%d時%d分\n", timeStr, info.Date.Month(), info.Date.Day(), info.Date.Hour(), info.Date.Minute())
 
 	if info.Scripture == "" {
 		contentStr = fmt.Sprintf("%s今天沒有經文\n\n%s", timeStr, info.Scripture, info.url)
